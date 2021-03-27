@@ -1,19 +1,19 @@
-name: .NET Core
+name: .NET builder
 
 on: [push]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    runs-on: windows-2019
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.0.100
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: Build DotNET
+        run: |
+           cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
+           .\MSBuild.exe /p:Configuration=Release $Env:GITHUB_WORKSPACE
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: MMover-AutoBuild
+          path: MMover\bin\Release
