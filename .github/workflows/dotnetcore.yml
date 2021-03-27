@@ -5,14 +5,11 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dotnet-version: [ '3.1.301' ]
     steps:
       - uses: actions/checkout@v2
       - name: Build DotNET
     with:
-        dotnet-version: ${{ matrix.dotnet-version }}
+        dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
     - name: Build
