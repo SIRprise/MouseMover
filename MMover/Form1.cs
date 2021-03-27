@@ -7,10 +7,9 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mover
+namespace MMover
 {
     public partial class Form1 : Form
     {
@@ -25,7 +24,7 @@ namespace Mover
         private const int MOUSEEVENTF_LEFTUP = 0x04;
         private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
         private const int MOUSEEVENTF_RIGHTUP = 0x10;
-        
+
         [Flags]
         public enum MouseEventFlags
         {
@@ -63,7 +62,7 @@ namespace Mover
 
         private void button1_Click(object sender, EventArgs e)
         {
-            timer1.Interval = 30*1000;
+            timer1.Interval = 30 * 1000;
             timer1.Start();
         }
     }
