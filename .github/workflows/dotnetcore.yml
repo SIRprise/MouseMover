@@ -14,7 +14,6 @@ jobs:
            cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
            .\MSBuild.exe /p:Configuration=Release $Env:GITHUB_WORKSPACE
       - name: Upload Artifact
-        working-directory: MMover
         uses: actions/upload-artifact@v1
         with:
           name: MMover-AutoBuild
