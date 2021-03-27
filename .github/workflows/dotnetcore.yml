@@ -16,5 +16,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: MouseMover-AutoBuild
-          path: MouseMover\bin\Release
+          name: Mover-AutoBuild
+          path: Mover\bin\Release
