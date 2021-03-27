@@ -18,7 +18,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Upload Artifact
-    uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v2
     with:
       name: Mover-AutoBuild
       path: Mover\bin\Release
